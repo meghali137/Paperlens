@@ -1,0 +1,4 @@
+{"paper_id": "1706.03762", "question": "What does the Transformer remove compared with earlier sequence models?", "gold": ["dispensing with recurrence"]}
+{"paper_id": "1706.03762", "question": "How is attention computed from queries, keys and values?", "gold": ["scaled dot-product attention"]}
+{"paper_id": "1706.03762", "question": "How does the model know the order of words?", "gold": ["sine and cosine functions"]}
+{"paper_id": "1706.03762", "question": "What English to German translation score did it reach?", "gold": ["28.4 bleu"]}

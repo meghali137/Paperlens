@@ -1,0 +1,24 @@
+# Secrets
+.env
+*.env
+!.env.example
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# App data (PDFs, extracted figures, SQLite database)
+backend/data/
+*.db
+
+# Model caches
+.cache/
+huggingface/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

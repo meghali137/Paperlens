@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+httpx
+pymupdf
+rank-bm25
+sentence-transformers
+numpy
+groq
+python-dotenv
+prometheus-client
+pydantic
