@@ -1,4 +1,4 @@
-import os, re, httpx, fitz
+import os, re, shutil, httpx, fitz
 import xml.etree.ElementTree as ET
 from .config import DATA_DIR
 from . import db, retrieval
@@ -55,24 +55,47 @@ def chunk_pages(doc, size=900):
             out.append({"page": pno, "text": " ".join(cur)})
     return out
 
+CAP_RE = re.compile(r"^(Figure|Fig\.)\s*(\d+)\s*[:.]")
+
 def extract_figures(doc, pid):
-    d = os.path.join(DATA_DIR, "figures", safe(pid)); os.makedirs(d, exist_ok=True); out = []
+    """Find each 'Figure N:' caption, collect the drawings/images just above it, and render only that region.
+    Rendering the region (not extracting raw images) handles vector diagrams, charts and transparent PNGs."""
+    d = os.path.join(DATA_DIR, "figures", safe(pid))
+    shutil.rmtree(d, ignore_errors=True); os.makedirs(d, exist_ok=True); out = []
     for pno, page in enumerate(doc, 1):
-        text = " ".join(page.get_text("text").split())
-        caps = re.findall(r"((?:Figure|Fig\.)\s*\d+[:.]\s.{0,220}?\.)(?=\s|$)", text)
-        cap, n = (caps[0] if caps else ""), 0
-        for im in page.get_images(full=True):
-            try:
-                pix = fitz.Pixmap(doc, im[0])
-                if pix.width < 200 or pix.height < 120: continue
-                if pix.n - pix.alpha >= 4: pix = fitz.Pixmap(fitz.csRGB, pix)
-                name = f"p{pno}_{im[0]}.png"; pix.save(os.path.join(d, name)); n += 1
-                out.append({"path": f"{safe(pid)}/{name}", "page": pno, "caption": cap})
-            except Exception: continue
-        if caps and n == 0:  # vector figure (most arXiv diagrams): render the page instead
-            name = f"p{pno}_page.png"; page.get_pixmap(dpi=110).save(os.path.join(d, name))
-            out.append({"path": f"{safe(pid)}/{name}", "page": pno, "caption": cap})
+        W, H = page.rect.width, page.rect.height
+        caps = []
+        for b in page.get_text("blocks"):
+            t = " ".join(b[4].split()); m = CAP_RE.match(t)
+            if b[6] == 0 and m: caps.append((fitz.Rect(b[:4]), t, m.group(2)))
+        if not caps: continue
+        gfx = []
+        for dr in page.get_drawings():
+            r = fitz.Rect(dr["rect"])
+            if r.height > 0.8 * H or (r.width > 0.95 * W and r.height < 4): continue  # page frames / header rules
+            gfx.append(fitz.Rect(r.x0 - .5, r.y0 - .5, r.x1 + .5, r.y1 + .5))
+        gfx += [fitz.Rect(im["bbox"]) for im in page.get_image_info()]
+        prev = 0
+        for rect, t, num in sorted(caps, key=lambda c: c[0].y0):
+            cand = [g for g in gfx if g.y1 <= rect.y0 + 3 and g.y0 >= prev - 3 and g.x1 > rect.x0 - 5 and g.x0 < rect.x1 + 5]
+            cand.sort(key=lambda g: -g.y1); u = None
+            for g in cand:                      # grow a cluster upward from the caption
+                if u is None:
+                    if rect.y0 - g.y1 < 90: u = fitz.Rect(g)
+                elif g.y1 >= u.y0 - 45: u |= g
+            prev = rect.y1
+            if u is None or u.height < 30 or u.width < 40: continue
+            clip = fitz.Rect(max(0, u.x0 - 16), max(0, u.y0 - 10), min(W, u.x1 + 16), rect.y0 - 1)
+            name = f"fig{num}_p{pno}.png"
+            page.get_pixmap(clip=clip, dpi=150).save(os.path.join(d, name))
+            out.append({"path": f"{safe(pid)}/{name}", "page": pno, "caption": t[:240]})
     return out
+
+def rebuild_figures(pid):
+    figs = extract_figures(fitz.open(download_pdf(pid)), pid)
+    with db.conn() as c:
+        c.execute("delete from figures where paper_id=?", (pid,))
+        for f in figs: c.execute("insert into figures values(?,?,?,?)", (pid, f["path"], f["page"], f["caption"]))
 
 def store_chunks(pid, pdf):
     doc = fitz.open(pdf); chunks = chunk_pages(doc)

@@ -86,6 +86,11 @@ def paper(pid: str):
     if not r: raise HTTPException(404, "Not found")
     return pub(r, full=True)
 
+@app.post("/api/papers/{pid:path}/figures/rebuild")
+def rebuild(pid: str):
+    if not get(pid): raise HTTPException(404, "Not found")
+    ingest.rebuild_figures(pid); return {"ok": True}
+
 @app.delete("/api/papers/{pid:path}")
 def delete(pid: str):
     with db.conn() as c:

@@ -84,12 +84,14 @@ async function paper(id) {
   $("#view").innerHTML = `<a class="back" href="#">← Library</a><h1 class="serif ptitle">${esc(p.title)}</h1>
     <div class="meta">${esc(p.authors)} · ${p.year} · <a href="https://arxiv.org/abs/${esc(p.id)}" target="_blank" rel="noopener">arXiv:${esc(p.id)}</a></div>
     <p class="oneline">${esc(s.one_line)}</p>${SEC.map(x => sec(s, x)).join("")}
-    <h2 class="serif sec">Figures and charts</h2>
-    <div class="figs">${p.figures.map(f => `<figure><img src="${API}${f.url}" loading="lazy" alt=""><figcaption>Page ${f.page}. ${esc(f.caption)}</figcaption></figure>`).join("") || '<span class="meta">No figures found.</span>'}</div>
+    <h2 class="serif sec">Figures and charts<button class="btn ghost sm" id="refig">Refresh figures</button></h2>
+    <div class="figs">${p.figures.map(f => `<figure><a href="${API}${f.url}" target="_blank" rel="noopener"><img src="${API}${f.url}" loading="lazy" alt=""></a><figcaption>Page ${f.page} · ${esc(f.caption)}</figcaption></figure>`).join("") || '<span class="meta">No figures found.</span>'}</div>
     <h2 class="serif sec">Explain in depth</h2>
     <div class="explain"><span class="meta">Pulls the key lines from the paper and explains each one. Optionally ask about a specific part.</span>
     <textarea id="q" placeholder="Optional, e.g. How does multi-head attention work?"></textarea>
     <button class="btn" id="ex">Explain in depth</button><div id="out"></div></div>`;
+  $("#refig").onclick = async () => { $("#refig").textContent = "Working…";
+    try { await api("/api/papers/" + id + "/figures/rebuild", {method: "POST"}); } catch (e) { alert(e.message); } paper(id); };
   $("#ex").onclick = async () => {
     $("#out").innerHTML = '<p class="meta">Reading the paper…</p>';
     try { const r = await api("/api/explain/" + id, {method: "POST", headers: J, body: JSON.stringify({question: $("#q").value})});

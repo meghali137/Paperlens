@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
 :root{--bg:#0b0b0c;--card:#141416;--card2:#1b1b1e;--tx:#fff;--mu:#9a9aa1;--bd:rgba(255,255,255,.1);--lime:#c8f432;--amber:#f5b94a;--red:#ff6b5e}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
@@ -49,9 +50,10 @@ code{background:var(--card2);padding:2px 6px;border-radius:6px;font-size:.9em}
 .box.prev{border-left-color:var(--amber)}.box.draw{border-left-color:var(--red)}.box.res{border-left-color:#fff}
 .box h3{margin:0 0 6px;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--mu)}
 .box p{margin:6px 0;white-space:pre-line}
-blockquote{margin:10px 0;padding:10px 14px;background:var(--card2);border-radius:10px;font:italic 18px/1.4 'Instrument Serif',Georgia,serif;color:#e8e8ea}
-blockquote span{font:12px Inter,sans-serif;color:var(--mu);font-style:normal}
-.figs{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+blockquote{margin:10px 0;padding:10px 16px;background:var(--card2);border-left:2px solid var(--lime);border-radius:4px 10px 10px 4px;font:italic 400 15px/1.7 Inter,system-ui,sans-serif;color:#dcdce0}
+blockquote span{font:normal 12px Inter,sans-serif;color:var(--mu);white-space:nowrap}
+.figs{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:14px}
+h2.sec .btn{margin-left:12px;vertical-align:middle;font-size:13px}
 .figs figure{margin:0;background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:10px}
 .figs img{width:100%;border-radius:8px;background:#fff}.figs figcaption{font-size:12px;color:var(--mu);margin-top:6px}
 .explain{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:20px;margin-top:10px}
