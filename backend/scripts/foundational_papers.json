@@ -1,0 +1,302 @@
+[
+ {
+  "category": "Training basics",
+  "name": "Adam",
+  "arxiv_id": "1412.6980",
+  "title_contains": "adam"
+ },
+ {
+  "category": "Training basics",
+  "name": "AdamW",
+  "arxiv_id": "1711.05101",
+  "title_contains": "weight decay"
+ },
+ {
+  "category": "Training basics",
+  "name": "Dropout",
+  "arxiv_id": "1207.0580",
+  "title_contains": "co-adaptation"
+ },
+ {
+  "category": "Training basics",
+  "name": "Batch Normalization",
+  "arxiv_id": "1502.03167",
+  "title_contains": "batch normalization"
+ },
+ {
+  "category": "Training basics",
+  "name": "Layer Normalization",
+  "arxiv_id": "1607.06450",
+  "title_contains": "layer normalization"
+ },
+ {
+  "category": "Vision",
+  "name": "ResNet",
+  "arxiv_id": "1512.03385",
+  "title_contains": "residual"
+ },
+ {
+  "category": "Vision",
+  "name": "VGG",
+  "arxiv_id": "1409.1556",
+  "title_contains": "very deep"
+ },
+ {
+  "category": "Vision",
+  "name": "GoogLeNet",
+  "arxiv_id": "1409.4842",
+  "title_contains": "deeper with convolutions"
+ },
+ {
+  "category": "Vision",
+  "name": "DenseNet",
+  "arxiv_id": "1608.06993",
+  "title_contains": "densely connected"
+ },
+ {
+  "category": "Vision",
+  "name": "EfficientNet",
+  "arxiv_id": "1905.11946",
+  "title_contains": "efficientnet"
+ },
+ {
+  "category": "Vision",
+  "name": "Vision Transformer (ViT)",
+  "arxiv_id": "2010.11929",
+  "title_contains": "16x16"
+ },
+ {
+  "category": "Vision",
+  "name": "U-Net",
+  "arxiv_id": "1505.04597",
+  "title_contains": "u-net"
+ },
+ {
+  "category": "Vision",
+  "name": "Faster R-CNN",
+  "arxiv_id": "1506.01497",
+  "title_contains": "faster r-cnn"
+ },
+ {
+  "category": "Vision",
+  "name": "YOLO",
+  "arxiv_id": "1506.02640",
+  "title_contains": "look once"
+ },
+ {
+  "category": "Multimodal",
+  "name": "CLIP",
+  "arxiv_id": "2103.00020",
+  "title_contains": "natural language supervision"
+ },
+ {
+  "category": "Generative",
+  "name": "GAN",
+  "arxiv_id": "1406.2661",
+  "title_contains": "adversarial"
+ },
+ {
+  "category": "Generative",
+  "name": "VAE",
+  "arxiv_id": "1312.6114",
+  "title_contains": "variational bayes"
+ },
+ {
+  "category": "Generative",
+  "name": "DDPM",
+  "arxiv_id": "2006.11239",
+  "title_contains": "denoising diffusion"
+ },
+ {
+  "category": "Generative",
+  "name": "Latent Diffusion",
+  "arxiv_id": "2112.10752",
+  "title_contains": "latent diffusion"
+ },
+ {
+  "category": "NLP",
+  "name": "Attention Is All You Need",
+  "arxiv_id": "1706.03762",
+  "title_contains": "attention is all you need"
+ },
+ {
+  "category": "NLP",
+  "name": "BERT",
+  "arxiv_id": "1810.04805",
+  "title_contains": "bert"
+ },
+ {
+  "category": "NLP",
+  "name": "Word2Vec",
+  "arxiv_id": "1301.3781",
+  "title_contains": "word representations"
+ },
+ {
+  "category": "NLP",
+  "name": "Seq2Seq",
+  "arxiv_id": "1409.3215",
+  "title_contains": "sequence to sequence"
+ },
+ {
+  "category": "NLP",
+  "name": "Bahdanau Attention",
+  "arxiv_id": "1409.0473",
+  "title_contains": "align and translate"
+ },
+ {
+  "category": "NLP",
+  "name": "ELMo",
+  "arxiv_id": "1802.05365",
+  "title_contains": "contextualized word"
+ },
+ {
+  "category": "NLP",
+  "name": "RoBERTa",
+  "arxiv_id": "1907.11692",
+  "title_contains": "roberta"
+ },
+ {
+  "category": "NLP",
+  "name": "T5",
+  "arxiv_id": "1910.10683",
+  "title_contains": "transfer learning"
+ },
+ {
+  "category": "NLP",
+  "name": "GRU Encoder-Decoder",
+  "arxiv_id": "1406.1078",
+  "title_contains": "phrase representations"
+ },
+ {
+  "category": "NLP",
+  "name": "GPT-3",
+  "arxiv_id": "2005.14165",
+  "title_contains": "few-shot"
+ },
+ {
+  "category": "LLMs",
+  "name": "Scaling Laws",
+  "arxiv_id": "2001.08361",
+  "title_contains": "scaling laws"
+ },
+ {
+  "category": "LLMs",
+  "name": "Chinchilla",
+  "arxiv_id": "2203.15556",
+  "title_contains": "compute-optimal"
+ },
+ {
+  "category": "LLMs",
+  "name": "InstructGPT",
+  "arxiv_id": "2203.02155",
+  "title_contains": "human feedback"
+ },
+ {
+  "category": "LLMs",
+  "name": "LLaMA",
+  "arxiv_id": "2302.13971",
+  "title_contains": "llama"
+ },
+ {
+  "category": "LLMs",
+  "name": "Llama 2",
+  "arxiv_id": "2307.09288",
+  "title_contains": "llama 2"
+ },
+ {
+  "category": "LLMs",
+  "name": "LoRA",
+  "arxiv_id": "2106.09685",
+  "title_contains": "lora"
+ },
+ {
+  "category": "LLMs",
+  "name": "Chain-of-Thought",
+  "arxiv_id": "2201.11903",
+  "title_contains": "chain-of-thought"
+ },
+ {
+  "category": "LLMs",
+  "name": "DPO",
+  "arxiv_id": "2305.18290",
+  "title_contains": "direct preference"
+ },
+ {
+  "category": "LLMs",
+  "name": "RAG",
+  "arxiv_id": "2005.11401",
+  "title_contains": "retrieval-augmented"
+ },
+ {
+  "category": "LLMs",
+  "name": "Constitutional AI",
+  "arxiv_id": "2212.08073",
+  "title_contains": "constitutional"
+ },
+ {
+  "category": "LLMs",
+  "name": "FlashAttention",
+  "arxiv_id": "2205.14135",
+  "title_contains": "flashattention"
+ },
+ {
+  "category": "LLMs",
+  "name": "Mamba",
+  "arxiv_id": "2312.00752",
+  "title_contains": "mamba"
+ },
+ {
+  "category": "LLMs",
+  "name": "ReAct",
+  "arxiv_id": "2210.03629",
+  "title_contains": "react"
+ },
+ {
+  "category": "LLMs",
+  "name": "RL from Human Preferences",
+  "arxiv_id": "1706.03741",
+  "title_contains": "human preferences"
+ },
+ {
+  "category": "Reinforcement learning",
+  "name": "DQN",
+  "arxiv_id": "1312.5602",
+  "title_contains": "atari"
+ },
+ {
+  "category": "Reinforcement learning",
+  "name": "PPO",
+  "arxiv_id": "1707.06347",
+  "title_contains": "proximal policy"
+ },
+ {
+  "category": "Reinforcement learning",
+  "name": "TRPO",
+  "arxiv_id": "1502.05477",
+  "title_contains": "trust region"
+ },
+ {
+  "category": "Reinforcement learning",
+  "name": "AlphaZero",
+  "arxiv_id": "1712.01815",
+  "title_contains": "chess"
+ },
+ {
+  "category": "Self-supervised and graphs",
+  "name": "SimCLR",
+  "arxiv_id": "2002.05709",
+  "title_contains": "contrastive learning"
+ },
+ {
+  "category": "Self-supervised and graphs",
+  "name": "GCN",
+  "arxiv_id": "1609.02907",
+  "title_contains": "graph convolutional"
+ },
+ {
+  "category": "Self-supervised and graphs",
+  "name": "GAT",
+  "arxiv_id": "1710.10903",
+  "title_contains": "graph attention"
+ }
+]

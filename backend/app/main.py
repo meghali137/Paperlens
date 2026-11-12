@@ -8,6 +8,7 @@ from . import db, ingest, llm, retrieval
 from .observability import REQ, log, metrics_response, stats
 
 db.init()
+CURRICULUM = json.load(open(os.path.join(os.path.dirname(__file__), "curriculum.json"), encoding="utf-8"))
 app = FastAPI(title="PaperLens")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
@@ -97,6 +98,21 @@ def delete(pid: str):
         for t, col in (("papers", "id"), ("chunks", "paper_id"), ("figures", "paper_id")):
             c.execute(f"delete from {t} where {col}=?", (pid,))
     retrieval.invalidate(pid); return {"ok": True}
+
+@app.get("/api/curriculum")
+def curriculum(): return CURRICULUM
+
+@app.get("/api/quiz/{pid:path}")
+def quiz(pid: str, fresh: int = 0):
+    r = get(pid)
+    if not r or r["status"] != "ready": raise HTTPException(409, "Paper is not ready yet")
+    if not fresh:
+        with db.conn() as c: row = c.execute("select json from quizzes where paper_id=?", (pid,)).fetchone()
+        if row: return {"questions": json.loads(row["json"])}
+    qs = llm.quiz(pid, r["title"])
+    if qs:
+        with db.conn() as c: c.execute("insert or replace into quizzes values(?,?)", (pid, json.dumps(qs)))
+    return {"questions": qs}
 
 @app.get("/api/stats")
 def api_stats(): return stats()

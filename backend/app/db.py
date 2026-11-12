@@ -9,6 +9,7 @@ create table if not exists chunks(id integer primary key autoincrement, paper_id
   page int, text text, emb blob);
 create index if not exists chunks_paper on chunks(paper_id);
 create table if not exists figures(paper_id text, path text, page int, caption text);
+create table if not exists quizzes(paper_id text primary key, json text);
 create table if not exists llm_calls(ts real, kind text, paper_id text, model text,
   latency_ms int, in_tok int, out_tok int, ok int);
 """

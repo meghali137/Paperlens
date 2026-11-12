@@ -1,0 +1,950 @@
+{
+ "papers": {
+  "1412.6980": {
+   "name": "Adam",
+   "category": "Training basics"
+  },
+  "1711.05101": {
+   "name": "AdamW",
+   "category": "Training basics"
+  },
+  "1207.0580": {
+   "name": "Dropout",
+   "category": "Training basics"
+  },
+  "1502.03167": {
+   "name": "Batch Normalization",
+   "category": "Training basics"
+  },
+  "1607.06450": {
+   "name": "Layer Normalization",
+   "category": "Training basics"
+  },
+  "1512.03385": {
+   "name": "ResNet",
+   "category": "Vision"
+  },
+  "1409.1556": {
+   "name": "VGG",
+   "category": "Vision"
+  },
+  "1409.4842": {
+   "name": "GoogLeNet",
+   "category": "Vision"
+  },
+  "1608.06993": {
+   "name": "DenseNet",
+   "category": "Vision"
+  },
+  "1905.11946": {
+   "name": "EfficientNet",
+   "category": "Vision"
+  },
+  "2010.11929": {
+   "name": "Vision Transformer (ViT)",
+   "category": "Vision"
+  },
+  "1505.04597": {
+   "name": "U-Net",
+   "category": "Vision"
+  },
+  "1506.01497": {
+   "name": "Faster R-CNN",
+   "category": "Vision"
+  },
+  "1506.02640": {
+   "name": "YOLO",
+   "category": "Vision"
+  },
+  "2103.00020": {
+   "name": "CLIP",
+   "category": "Multimodal"
+  },
+  "1406.2661": {
+   "name": "GAN",
+   "category": "Generative"
+  },
+  "1312.6114": {
+   "name": "VAE",
+   "category": "Generative"
+  },
+  "2006.11239": {
+   "name": "DDPM",
+   "category": "Generative"
+  },
+  "2112.10752": {
+   "name": "Latent Diffusion",
+   "category": "Generative"
+  },
+  "1706.03762": {
+   "name": "Attention Is All You Need",
+   "category": "NLP"
+  },
+  "1810.04805": {
+   "name": "BERT",
+   "category": "NLP"
+  },
+  "1301.3781": {
+   "name": "Word2Vec",
+   "category": "NLP"
+  },
+  "1409.3215": {
+   "name": "Seq2Seq",
+   "category": "NLP"
+  },
+  "1409.0473": {
+   "name": "Bahdanau Attention",
+   "category": "NLP"
+  },
+  "1802.05365": {
+   "name": "ELMo",
+   "category": "NLP"
+  },
+  "1907.11692": {
+   "name": "RoBERTa",
+   "category": "NLP"
+  },
+  "1910.10683": {
+   "name": "T5",
+   "category": "NLP"
+  },
+  "1406.1078": {
+   "name": "GRU Encoder-Decoder",
+   "category": "NLP"
+  },
+  "2005.14165": {
+   "name": "GPT-3",
+   "category": "NLP"
+  },
+  "2001.08361": {
+   "name": "Scaling Laws",
+   "category": "LLMs"
+  },
+  "2203.15556": {
+   "name": "Chinchilla",
+   "category": "LLMs"
+  },
+  "2203.02155": {
+   "name": "InstructGPT",
+   "category": "LLMs"
+  },
+  "2302.13971": {
+   "name": "LLaMA",
+   "category": "LLMs"
+  },
+  "2307.09288": {
+   "name": "Llama 2",
+   "category": "LLMs"
+  },
+  "2106.09685": {
+   "name": "LoRA",
+   "category": "LLMs"
+  },
+  "2201.11903": {
+   "name": "Chain-of-Thought",
+   "category": "LLMs"
+  },
+  "2305.18290": {
+   "name": "DPO",
+   "category": "LLMs"
+  },
+  "2005.11401": {
+   "name": "RAG",
+   "category": "LLMs"
+  },
+  "2212.08073": {
+   "name": "Constitutional AI",
+   "category": "LLMs"
+  },
+  "2205.14135": {
+   "name": "FlashAttention",
+   "category": "LLMs"
+  },
+  "2312.00752": {
+   "name": "Mamba",
+   "category": "LLMs"
+  },
+  "2210.03629": {
+   "name": "ReAct",
+   "category": "LLMs"
+  },
+  "1706.03741": {
+   "name": "RL from Human Preferences",
+   "category": "LLMs"
+  },
+  "1312.5602": {
+   "name": "DQN",
+   "category": "Reinforcement learning"
+  },
+  "1707.06347": {
+   "name": "PPO",
+   "category": "Reinforcement learning"
+  },
+  "1502.05477": {
+   "name": "TRPO",
+   "category": "Reinforcement learning"
+  },
+  "1712.01815": {
+   "name": "AlphaZero",
+   "category": "Reinforcement learning"
+  },
+  "2002.05709": {
+   "name": "SimCLR",
+   "category": "Self-supervised and graphs"
+  },
+  "1609.02907": {
+   "name": "GCN",
+   "category": "Self-supervised and graphs"
+  },
+  "1710.10903": {
+   "name": "GAT",
+   "category": "Self-supervised and graphs"
+  }
+ },
+ "prereqs": {
+  "1412.6980": {
+   "papers": [],
+   "concepts": [
+    "gradient descent",
+    "learning rate",
+    "momentum"
+   ]
+  },
+  "1711.05101": {
+   "papers": [
+    "1412.6980"
+   ],
+   "concepts": [
+    "weight decay",
+    "regularization"
+   ]
+  },
+  "1207.0580": {
+   "papers": [],
+   "concepts": [
+    "overfitting",
+    "regularization"
+   ]
+  },
+  "1502.03167": {
+   "papers": [],
+   "concepts": [
+    "mini-batch",
+    "gradient descent"
+   ]
+  },
+  "1607.06450": {
+   "papers": [
+    "1502.03167"
+   ],
+   "concepts": [
+    "batch normalization",
+    "RNN"
+   ]
+  },
+  "1512.03385": {
+   "papers": [
+    "1409.1556"
+   ],
+   "concepts": [
+    "vanishing gradient",
+    "convolution"
+   ]
+  },
+  "1409.1556": {
+   "papers": [],
+   "concepts": [
+    "convolution",
+    "CNN",
+    "ImageNet"
+   ]
+  },
+  "1409.4842": {
+   "papers": [
+    "1409.1556"
+   ],
+   "concepts": [
+    "convolution",
+    "CNN"
+   ]
+  },
+  "1608.06993": {
+   "papers": [
+    "1512.03385"
+   ],
+   "concepts": [
+    "skip connection",
+    "CNN"
+   ]
+  },
+  "1905.11946": {
+   "papers": [
+    "1512.03385"
+   ],
+   "concepts": [
+    "CNN",
+    "scaling law"
+   ]
+  },
+  "2010.11929": {
+   "papers": [
+    "1706.03762"
+   ],
+   "concepts": [
+    "self-attention",
+    "token"
+   ]
+  },
+  "1505.04597": {
+   "papers": [],
+   "concepts": [
+    "convolution",
+    "segmentation"
+   ]
+  },
+  "1506.01497": {
+   "papers": [
+    "1409.1556"
+   ],
+   "concepts": [
+    "object detection",
+    "CNN"
+   ]
+  },
+  "1506.02640": {
+   "papers": [
+    "1506.01497"
+   ],
+   "concepts": [
+    "object detection",
+    "CNN"
+   ]
+  },
+  "2103.00020": {
+   "papers": [
+    "2010.11929",
+    "1706.03762"
+   ],
+   "concepts": [
+    "embedding",
+    "contrastive learning"
+   ]
+  },
+  "1406.2661": {
+   "papers": [],
+   "concepts": [
+    "generator",
+    "discriminator",
+    "loss function"
+   ]
+  },
+  "1312.6114": {
+   "papers": [],
+   "concepts": [
+    "autoencoder",
+    "latent space",
+    "KL divergence"
+   ]
+  },
+  "2006.11239": {
+   "papers": [
+    "1312.6114"
+   ],
+   "concepts": [
+    "diffusion model",
+    "KL divergence"
+   ]
+  },
+  "2112.10752": {
+   "papers": [
+    "2006.11239",
+    "1312.6114"
+   ],
+   "concepts": [
+    "latent space",
+    "diffusion model"
+   ]
+  },
+  "1706.03762": {
+   "papers": [
+    "1409.0473"
+   ],
+   "concepts": [
+    "attention",
+    "encoder",
+    "decoder",
+    "softmax"
+   ]
+  },
+  "1810.04805": {
+   "papers": [
+    "1706.03762"
+   ],
+   "concepts": [
+    "pre-training",
+    "fine-tuning",
+    "masked language model"
+   ]
+  },
+  "1301.3781": {
+   "papers": [],
+   "concepts": [
+    "embedding",
+    "token"
+   ]
+  },
+  "1409.3215": {
+   "papers": [],
+   "concepts": [
+    "RNN",
+    "LSTM",
+    "encoder",
+    "decoder"
+   ]
+  },
+  "1409.0473": {
+   "papers": [
+    "1409.3215"
+   ],
+   "concepts": [
+    "attention",
+    "RNN"
+   ]
+  },
+  "1802.05365": {
+   "papers": [
+    "1301.3781"
+   ],
+   "concepts": [
+    "embedding",
+    "LSTM",
+    "pre-training"
+   ]
+  },
+  "1907.11692": {
+   "papers": [
+    "1810.04805"
+   ],
+   "concepts": [
+    "pre-training",
+    "masked language model"
+   ]
+  },
+  "1910.10683": {
+   "papers": [
+    "1810.04805"
+   ],
+   "concepts": [
+    "transfer learning",
+    "encoder",
+    "decoder"
+   ]
+  },
+  "1406.1078": {
+   "papers": [],
+   "concepts": [
+    "RNN",
+    "encoder",
+    "decoder"
+   ]
+  },
+  "2005.14165": {
+   "papers": [
+    "1706.03762"
+   ],
+   "concepts": [
+    "language model",
+    "few-shot learning",
+    "in-context learning"
+   ]
+  },
+  "2001.08361": {
+   "papers": [
+    "1706.03762"
+   ],
+   "concepts": [
+    "language model",
+    "scaling law",
+    "perplexity"
+   ]
+  },
+  "2203.15556": {
+   "papers": [
+    "2001.08361"
+   ],
+   "concepts": [
+    "scaling law",
+    "FLOPs"
+   ]
+  },
+  "2203.02155": {
+   "papers": [
+    "2005.14165",
+    "1706.03741"
+   ],
+   "concepts": [
+    "RLHF",
+    "reward model",
+    "fine-tuning"
+   ]
+  },
+  "2302.13971": {
+   "papers": [
+    "2005.14165"
+   ],
+   "concepts": [
+    "language model",
+    "token"
+   ]
+  },
+  "2307.09288": {
+   "papers": [
+    "2302.13971",
+    "2203.02155"
+   ],
+   "concepts": [
+    "RLHF",
+    "fine-tuning"
+   ]
+  },
+  "2106.09685": {
+   "papers": [],
+   "concepts": [
+    "fine-tuning",
+    "parameter",
+    "low-rank adaptation"
+   ]
+  },
+  "2201.11903": {
+   "papers": [
+    "2005.14165"
+   ],
+   "concepts": [
+    "prompt",
+    "chain of thought",
+    "few-shot learning"
+   ]
+  },
+  "2305.18290": {
+   "papers": [
+    "2203.02155"
+   ],
+   "concepts": [
+    "RLHF",
+    "reward model",
+    "policy"
+   ]
+  },
+  "2005.11401": {
+   "papers": [
+    "1810.04805"
+   ],
+   "concepts": [
+    "retrieval",
+    "hallucination",
+    "embedding"
+   ]
+  },
+  "2212.08073": {
+   "papers": [
+    "2203.02155"
+   ],
+   "concepts": [
+    "RLHF",
+    "reward model"
+   ]
+  },
+  "2205.14135": {
+   "papers": [
+    "1706.03762"
+   ],
+   "concepts": [
+    "self-attention",
+    "FLOPs"
+   ]
+  },
+  "2312.00752": {
+   "papers": [
+    "1706.03762"
+   ],
+   "concepts": [
+    "state space model",
+    "autoregressive"
+   ]
+  },
+  "2210.03629": {
+   "papers": [
+    "2201.11903"
+   ],
+   "concepts": [
+    "prompt",
+    "chain of thought"
+   ]
+  },
+  "1706.03741": {
+   "papers": [],
+   "concepts": [
+    "reinforcement learning",
+    "reward model",
+    "policy"
+   ]
+  },
+  "1312.5602": {
+   "papers": [],
+   "concepts": [
+    "reinforcement learning",
+    "Q-learning",
+    "CNN"
+   ]
+  },
+  "1707.06347": {
+   "papers": [
+    "1502.05477"
+   ],
+   "concepts": [
+    "policy",
+    "reinforcement learning"
+   ]
+  },
+  "1502.05477": {
+   "papers": [
+    "1312.5602"
+   ],
+   "concepts": [
+    "policy",
+    "KL divergence"
+   ]
+  },
+  "1712.01815": {
+   "papers": [
+    "1312.5602"
+   ],
+   "concepts": [
+    "reinforcement learning",
+    "policy"
+   ]
+  },
+  "2002.05709": {
+   "papers": [],
+   "concepts": [
+    "contrastive learning",
+    "embedding"
+   ]
+  },
+  "1609.02907": {
+   "papers": [],
+   "concepts": [
+    "graph neural network",
+    "convolution"
+   ]
+  },
+  "1710.10903": {
+   "papers": [
+    "1609.02907",
+    "1706.03762"
+   ],
+   "concepts": [
+    "graph neural network",
+    "attention"
+   ]
+  }
+ },
+ "paths": [
+  {
+   "id": "chatgpt",
+   "title": "How ChatGPT came to be",
+   "blurb": "From words as numbers to a model that follows instructions.",
+   "steps": [
+    {
+     "id": "1301.3781",
+     "why": "Words become vectors, so computers can compare meanings."
+    },
+    {
+     "id": "1409.3215",
+     "why": "A network that reads a whole sentence and writes another one."
+    },
+    {
+     "id": "1409.0473",
+     "why": "Attention fixes the memory bottleneck of Seq2Seq."
+    },
+    {
+     "id": "1706.03762",
+     "why": "Drops recurrence entirely and uses attention alone."
+    },
+    {
+     "id": "1810.04805",
+     "why": "Pre-training on unlabeled text, then fine-tuning for each task."
+    },
+    {
+     "id": "2005.14165",
+     "why": "Scale a language model up and it learns tasks from examples in the prompt."
+    },
+    {
+     "id": "1706.03741",
+     "why": "Learning what humans prefer from comparisons instead of hand-written rewards."
+    },
+    {
+     "id": "2203.02155",
+     "why": "Uses human feedback to make a language model follow instructions."
+    },
+    {
+     "id": "2305.18290",
+     "why": "A simpler way to train on human preferences, without a separate reward step."
+    }
+   ]
+  },
+  {
+   "id": "vision",
+   "title": "How computers learned to see",
+   "blurb": "Deeper and smarter image networks, up to transformers and text-guided vision.",
+   "steps": [
+    {
+     "id": "1409.1556",
+     "why": "Shows that depth with small filters works well."
+    },
+    {
+     "id": "1409.4842",
+     "why": "Gets accuracy from clever blocks instead of just more layers."
+    },
+    {
+     "id": "1512.03385",
+     "why": "Skip connections make very deep networks trainable."
+    },
+    {
+     "id": "1608.06993",
+     "why": "Connects every layer to all later ones to reuse features."
+    },
+    {
+     "id": "1905.11946",
+     "why": "Scales depth, width and resolution together."
+    },
+    {
+     "id": "2010.11929",
+     "why": "Treats an image as a sequence of patches and uses a Transformer."
+    },
+    {
+     "id": "2103.00020",
+     "why": "Learns images and text together, so you can search images with words."
+    }
+   ]
+  },
+  {
+   "id": "detect",
+   "title": "Finding things in images",
+   "blurb": "Detection and segmentation, from region proposals to real-time.",
+   "steps": [
+    {
+     "id": "1506.01497",
+     "why": "Detects objects by proposing regions and classifying them."
+    },
+    {
+     "id": "1506.02640",
+     "why": "Detects objects in a single pass, fast enough for real time."
+    },
+    {
+     "id": "1505.04597",
+     "why": "Labels every pixel, and works with very little training data."
+    }
+   ]
+  },
+  {
+   "id": "imagegen",
+   "title": "How AI creates images",
+   "blurb": "From compressing images to generating new ones.",
+   "steps": [
+    {
+     "id": "1312.6114",
+     "why": "Learns a smooth latent space you can sample from."
+    },
+    {
+     "id": "1406.2661",
+     "why": "Two networks compete: one creates fakes, one spots them."
+    },
+    {
+     "id": "2006.11239",
+     "why": "Generates images by learning to remove noise step by step."
+    },
+    {
+     "id": "2112.10752",
+     "why": "Runs diffusion in a compressed space, making it much cheaper."
+    },
+    {
+     "id": "2103.00020",
+     "why": "Links text and images, which lets text guide generation."
+    }
+   ]
+  },
+  {
+   "id": "training",
+   "title": "Training deep networks well",
+   "blurb": "The techniques that made deep networks stable and trainable.",
+   "steps": [
+    {
+     "id": "1207.0580",
+     "why": "Randomly switching off neurons reduces overfitting."
+    },
+    {
+     "id": "1502.03167",
+     "why": "Normalizing layer inputs speeds up and steadies training."
+    },
+    {
+     "id": "1607.06450",
+     "why": "Normalization that works for sequence models and small batches."
+    },
+    {
+     "id": "1412.6980",
+     "why": "An optimizer that adapts the step size for every parameter."
+    },
+    {
+     "id": "1711.05101",
+     "why": "Fixes how weight decay works with Adam."
+    },
+    {
+     "id": "1512.03385",
+     "why": "Skip connections let gradients reach early layers."
+    }
+   ]
+  },
+  {
+   "id": "llm",
+   "title": "Making language models bigger, cheaper and more useful",
+   "blurb": "Scaling, efficiency, tools and new architectures.",
+   "steps": [
+    {
+     "id": "2001.08361",
+     "why": "Performance improves predictably with size, data and compute."
+    },
+    {
+     "id": "2203.15556",
+     "why": "Most big models were too large for their data; the balance matters."
+    },
+    {
+     "id": "2302.13971",
+     "why": "Strong open models trained on public data."
+    },
+    {
+     "id": "2106.09685",
+     "why": "Fine-tune a huge model by training only a few small matrices."
+    },
+    {
+     "id": "2205.14135",
+     "why": "Makes attention faster by managing memory carefully."
+    },
+    {
+     "id": "2005.11401",
+     "why": "Gives a model a search step so it can use outside knowledge."
+    },
+    {
+     "id": "2201.11903",
+     "why": "Asking for step-by-step reasoning improves hard answers."
+    },
+    {
+     "id": "2210.03629",
+     "why": "Mixes reasoning with actions such as looking things up."
+    },
+    {
+     "id": "2312.00752",
+     "why": "An alternative to attention with cost that grows linearly."
+    }
+   ]
+  },
+  {
+   "id": "rl",
+   "title": "Learning by trial and error",
+   "blurb": "Reinforcement learning from Atari to Go to language models.",
+   "steps": [
+    {
+     "id": "1312.5602",
+     "why": "A deep network learns to play Atari from pixels."
+    },
+    {
+     "id": "1502.05477",
+     "why": "Update the policy in safe, bounded steps."
+    },
+    {
+     "id": "1707.06347",
+     "why": "A simpler, popular way to keep updates stable."
+    },
+    {
+     "id": "1712.01815",
+     "why": "One algorithm masters chess, shogi and Go through self-play."
+    },
+    {
+     "id": "1706.03741",
+     "why": "Using human preferences as the reward signal."
+    }
+   ]
+  }
+ ],
+ "glossary": {
+  "attention": "A mechanism that lets a model weigh which parts of the input matter most for each output, instead of treating every part equally.",
+  "self-attention": "Attention where every word in a sequence looks at every other word in the same sequence to build its representation.",
+  "multi-head attention": "Running several attention operations in parallel so the model can look at different relationships at once.",
+  "transformer": "A neural network built from attention layers instead of recurrence. It is the basis of modern language models.",
+  "positional encoding": "Extra information added to tokens so the model knows the order of the words.",
+  "embedding": "A list of numbers that represents a word, image or other item, so that similar items get similar numbers.",
+  "token": "A small chunk of text (a word or part of a word) that a language model reads as one unit.",
+  "softmax": "A function that turns a list of scores into probabilities that add up to 1.",
+  "gradient descent": "A way to train a model by repeatedly nudging its parameters in the direction that reduces the error.",
+  "backpropagation": "The algorithm that works out how much each parameter contributed to the error, so gradient descent can update it.",
+  "loss function": "A number that measures how wrong the model's predictions are. Training tries to make it small.",
+  "overfitting": "When a model memorizes its training data and does poorly on new data.",
+  "regularization": "Techniques that discourage a model from overfitting, such as dropout or weight decay.",
+  "dropout": "A regularization trick that randomly switches off neurons during training so the network cannot rely on any single one.",
+  "weight decay": "A penalty that keeps the model's weights small. It is a form of regularization.",
+  "batch normalization": "Rescaling a layer's inputs for each mini-batch to keep training stable and faster.",
+  "layer normalization": "Like batch normalization, but it normalizes across the features of a single example, which suits sequence models.",
+  "learning rate": "How big a step the optimizer takes at each update.",
+  "optimizer": "The algorithm that updates the model's parameters during training, such as SGD or Adam.",
+  "momentum": "An optimizer trick that keeps moving in a consistent direction by averaging past gradients.",
+  "mini-batch": "A small subset of the training data used for one update.",
+  "epoch": "One full pass through the training data.",
+  "hyperparameter": "A setting chosen by the person, such as the learning rate, rather than learned by the model.",
+  "parameter": "A number inside the model that is learned during training.",
+  "vanishing gradient": "When gradients shrink as they travel back through many layers, so the early layers barely learn.",
+  "skip connection": "A shortcut that adds a layer's input to its output, which makes very deep networks easier to train.",
+  "residual connection": "Another name for a skip connection: the layer only learns a correction to its input.",
+  "convolution": "A small filter slid across an image to detect patterns such as edges.",
+  "CNN": "Convolutional neural network, a network built mainly from convolutions and used for images.",
+  "RNN": "Recurrent neural network, which reads a sequence step by step and carries a memory forward.",
+  "LSTM": "A type of RNN with gates that help it remember information over longer sequences.",
+  "encoder": "The part of a model that turns the input into an internal representation.",
+  "decoder": "The part of a model that generates output from an internal representation.",
+  "pre-training": "Training a model first on a large general dataset before adapting it to a specific task.",
+  "fine-tuning": "Continuing to train a pre-trained model on a smaller, task-specific dataset.",
+  "transfer learning": "Reusing knowledge learned on one task to help with another.",
+  "few-shot learning": "Getting a model to do a new task from just a handful of examples.",
+  "zero-shot": "Doing a task with no examples, only an instruction.",
+  "in-context learning": "A model picks up a task from examples placed in its prompt, without any change to its weights.",
+  "language model": "A model that predicts the next word (or token) from the ones before it.",
+  "masked language model": "A model trained by hiding some words and asking it to predict them.",
+  "autoregressive": "Generating one token at a time, each based on the tokens before it.",
+  "prompt": "The text instruction or examples given to a language model.",
+  "chain of thought": "Prompting a model to write out its reasoning steps before giving the answer.",
+  "hallucination": "When a model states something fluent but false.",
+  "retrieval": "Looking up relevant documents to give a model extra information.",
+  "perplexity": "A measure of how surprised a language model is by text. Lower is better.",
+  "BLEU": "A score that compares machine-translated text with human translations. Higher is better.",
+  "GLUE": "A benchmark made of several language-understanding tasks.",
+  "ImageNet": "A large image dataset with 1,000 categories, used as a standard benchmark for vision models.",
+  "object detection": "Finding and labeling objects in an image, usually with boxes.",
+  "segmentation": "Labeling every pixel of an image with a class.",
+  "generator": "In a GAN, the network that creates fake samples.",
+  "discriminator": "In a GAN, the network that tries to tell real samples from fake ones.",
+  "autoencoder": "A network that compresses data into a small code and then reconstructs it.",
+  "latent space": "A compressed internal space where a model represents data, so that nearby points mean similar things.",
+  "KL divergence": "A measure of how different one probability distribution is from another.",
+  "diffusion model": "A generative model that learns to create data by gradually removing noise.",
+  "contrastive learning": "Learning by pulling similar examples together and pushing different ones apart.",
+  "graph neural network": "A network that learns from data made of nodes and the connections between them.",
+  "reinforcement learning": "Learning by trial and error, where an agent gets rewards for good actions.",
+  "policy": "The rule a reinforcement-learning agent uses to choose actions.",
+  "Q-learning": "A reinforcement-learning method that learns how valuable each action is in each situation.",
+  "reward model": "A model trained to score outputs by how much humans would prefer them.",
+  "RLHF": "Reinforcement learning from human feedback: tuning a model using human preference judgments.",
+  "scaling law": "A predictable relationship between model size, data, compute and performance.",
+  "FLOPs": "A count of arithmetic operations, used to measure how much compute something needs.",
+  "low-rank adaptation": "Fine-tuning by training small added matrices instead of all of the model's weights.",
+  "state space model": "A sequence model that carries a compact hidden state forward, so its cost grows linearly with length."
+ }
+}
