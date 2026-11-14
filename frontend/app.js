@@ -11,7 +11,6 @@ async function api(u, o) {
   return r.json();
 }
 
-/* ---------- curriculum (groups, prerequisites, paths, glossary) ---------- */
 async function loadCur() {
   if (CUR) return CUR;
   try { CUR = await api("/api/curriculum"); } catch { CUR = {papers: {}, prereqs: {}, paths: [], glossary: {}}; }
@@ -20,7 +19,7 @@ async function loadCur() {
   GRX = ts.length ? new RegExp("\\b(" + ts.join("|") + ")(?:s|es)?\\b", "gi") : null;
   return CUR;
 }
-// Takes ESCAPED text. Wraps the first mention of each glossary term in a hover tooltip.
+
 function gloss(html) {
   if (!GRX) return html;
   const seen = new Set();
@@ -36,11 +35,9 @@ const LABEL = {queued: "Queued", indexing: "Indexing PDF", summarizing: "Writing
 const stCls = s => s === "ready" ? "ready" : s === "error" ? "error" : "busy";
 const CHIPS = [["Attention Is All You Need", "1706.03762"], ["BERT", "1810.04805"], ["ResNet", "1512.03385"], ["GPT-3", "2005.14165"], ["Adam", "1412.6980"], ["GANs", "1406.2661"]];
 
-/* ---------- library ---------- */
 async function home() {
   clearTimeout(timer); await loadCur();
   $("#view").innerHTML = `<section class="hero">
-    <span class="pill"><b></b>Foundational AI papers, explained</span>
     <h1 class="serif">Understand any AI paper <em>in minutes.</em></h1>
     <p class="lead">Paste an arXiv ID or a title. Get why it was written, what it fixed, where it falls short, with the paper’s own key lines.</p>
     <div class="addbox"><input id="aid" placeholder="arXiv ID or paper title, e.g. 1706.03762"><button class="btn" id="addb">Add paper</button></div>

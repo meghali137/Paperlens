@@ -137,3 +137,38 @@ a.btn{text-decoration:none;display:inline-block}
 .ring span{position:relative;font:600 30px Inter,sans-serif}
 .qdone h3{font:500 22px Inter,sans-serif;margin:0 0 6px}
 .qdone .row{display:flex;gap:10px;justify-content:center;margin-top:16px;flex-wrap:wrap}
+
+/* ---- ambient background: soft drifting glows + faint dot grid (stays behind everything, fixed while you scroll) ---- */
+body{position:relative}
+body::before{content:"";position:fixed;inset:-12%;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(1000px 700px at 86% 12%,rgba(200,244,50,.17),transparent 64%),
+    radial-gradient(940px 800px at 8% 48%,rgba(52,211,153,.16),transparent 64%),
+    radial-gradient(1000px 800px at 90% 84%,rgba(45,212,191,.15),transparent 66%),
+    radial-gradient(860px 600px at 20% 102%,rgba(200,244,50,.13),transparent 64%);
+  animation:drift 26s ease-in-out infinite alternate}
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:radial-gradient(rgba(255,255,255,.075) 1px,transparent 1.2px);background-size:28px 28px;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 22%,#000 72%,transparent 100%);
+  mask-image:linear-gradient(to bottom,transparent 0%,#000 22%,#000 72%,transparent 100%)}
+@keyframes drift{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(-2.5%,2%,0) scale(1.06)}}
+@media (prefers-reduced-motion:reduce){body::before{animation:none}}
+
+/* a stronger glow behind the Library heading and filters */
+h2.sec:has(+ .filters){position:relative}
+h2.sec:has(+ .filters)::before{content:"";position:absolute;left:-8%;right:-8%;top:-60px;height:420px;z-index:-1;pointer-events:none;
+  background:radial-gradient(55% 55% at 50% 45%,rgba(52,211,153,.11),rgba(200,244,50,.05) 55%,transparent 76%)}
+
+/* cards let the glow show through a little */
+.card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.012)),rgba(20,20,22,.8);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-color:rgba(255,255,255,.1)}
+.card:hover{box-shadow:0 0 0 1px var(--lime),0 16px 40px rgba(200,244,50,.12)}
+
+/* finishing touches */
+h1 em{background:linear-gradient(90deg,#d6ff4a,#7be8a8);-webkit-background-clip:text;background-clip:text;color:transparent}
+footer{border-top:1px solid transparent;border-image:linear-gradient(90deg,transparent,rgba(200,244,50,.35),transparent) 1;margin-top:20px}
+
+/* let the hero glow fade out naturally instead of ending in a hard edge */
+.hero{overflow:visible}
+main{overflow-x:clip}
+.hero::before{bottom:-150px;height:440px;width:1000px;background:radial-gradient(closest-side,rgba(200,244,50,.34),rgba(200,244,50,.10) 55%,transparent)}
